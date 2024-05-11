@@ -5,7 +5,7 @@ import meme3 from "../assets/memes/3.png"
 import meme4 from "../assets/memes/4.png"
 import meme5 from "../assets/memes/5.png"
 import meme6 from "../assets/memes/6.png"
-import { Box, Container, Flex, Grid, Image } from "@chakra-ui/react"
+import { Box, Container, Image } from "@chakra-ui/react"
 
 export const Memes: FC = () => {
   return (
