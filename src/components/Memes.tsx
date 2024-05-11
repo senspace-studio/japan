@@ -9,14 +9,47 @@ import { Box, Container, Image } from "@chakra-ui/react"
 
 export const Memes: FC = () => {
   return (
-    <Box mt="-200px" height="920px" overflow="hidden">
+    <Box mt="-200px" height={["920px", "870px"]} overflow="hidden">
       <Container position="relative">
-        <Image src={meme1} position="absolute" right={5} />
-        <Image src={meme2} position="absolute" top={120} zIndex={1} />
-        <Image src={meme3} position="absolute" top={340} right={10} />
-        <Image src={meme4} position="absolute" top={500} />
-        <Image src={meme5} position="absolute" top={500} right={-3} />
-        <Image src={meme6} position="absolute" top={680} />
+        <Image
+          transform={["none", "scale(1.5)"]}
+          src={meme1}
+          position="absolute"
+          right={5}
+        />
+        <Image
+          transform={["none", "scale(1.2)"]}
+          src={meme2}
+          position="absolute"
+          top={120}
+          zIndex={1}
+        />
+        <Image
+          transform={["none", "scale(1.2)"]}
+          src={meme3}
+          position="absolute"
+          top={[340, 250]}
+          right={10}
+        />
+        <Image
+          transform={["none", "scale(1.2)"]}
+          src={meme4}
+          position="absolute"
+          top={[500, 400]}
+        />
+        <Image
+          transform={["none", "scale(1.6)"]}
+          src={meme5}
+          position="absolute"
+          top={[500, 470]}
+          right={-3}
+        />
+        <Image
+          transform={["none", "scale(1.2)"]}
+          src={meme6}
+          position="absolute"
+          top={610}
+        />
       </Container>
     </Box>
   )

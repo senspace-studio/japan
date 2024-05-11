@@ -4,10 +4,10 @@ import { FC } from "react"
 export const Header: FC = () => {
   return (
     <header>
-      <Grid gridTemplateColumns="1fr 1fr" p={2}>
+      <Grid gridTemplateColumns="1fr 1fr" p={2} alignItems="center">
         <Flex alignItems="center">
-          <Image src="/logo.png" width="40px" />
-          <Text fontWeight="bold" color="japan.400">
+          <Image src="/logo.png" width={["40px", "50px"]} />
+          <Text fontWeight="bold" color="japan.400" fontSize={["md", "xl"]}>
             $JAPAN
           </Text>
         </Flex>
@@ -20,6 +20,8 @@ export const Header: FC = () => {
               backgroundColor="japan.400"
               color="white"
               borderRadius="full"
+              size="lg"
+              pt={1}
             >
               Buy $JAPAN
             </Button>

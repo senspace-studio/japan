@@ -15,25 +15,36 @@ import hero2 from "./assets/hero/2.jpg"
 import hero3 from "./assets/hero/3.jpg"
 import hero4 from "./assets/hero/4.jpg"
 import bg1 from "./assets/chart.png"
-import collage1 from "./assets/collage1.png"
+import collage_sp from "./assets/collage_sp.png"
+import collage_pc from "./assets/collage_pc.png"
 import { Tokenomics } from "./components/Tokenomics"
 import { Memes } from "./components/Memes"
 import Autoplay from "embla-carousel-autoplay"
 
 function App() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({
-      stopOnInteraction: false,
-      delay: 4000,
-    }),
-  ])
+  const [emblaRef] = useEmblaCarousel(
+    {
+      loop: true,
+      breakpoints: {
+        "(min-width: 768px)": {
+          slidesToScroll: 2,
+        },
+      },
+    },
+    [
+      Autoplay({
+        stopOnInteraction: false,
+        delay: 4000,
+      }),
+    ]
+  )
 
   return (
     <>
       <Box ref={emblaRef} overflow="hidden">
         <Box display="flex">
           <Flex
-            flex="0 0 100%"
+            flex={["0 0 100%", "0 0 33.333%"]}
             minW="0"
             justifyContent="center"
             alignItems="center"
@@ -41,7 +52,7 @@ function App() {
             <Image src={hero1} />
           </Flex>
           <Flex
-            flex="0 0 100%"
+            flex={["0 0 100%", "0 0 33.333%"]}
             minW="0"
             justifyContent="center"
             alignItems="center"
@@ -49,7 +60,7 @@ function App() {
             <Image src={hero2} />
           </Flex>
           <Flex
-            flex="0 0 100%"
+            flex={["0 0 100%", "0 0 33.333%"]}
             minW="0"
             justifyContent="center"
             alignItems="center"
@@ -57,7 +68,7 @@ function App() {
             <Image src={hero3} />
           </Flex>
           <Flex
-            flex="0 0 100%"
+            flex={["0 0 100%", "0 0 33.333%"]}
             minW="0"
             justifyContent="center"
             alignItems="center"
@@ -71,8 +82,8 @@ function App() {
         overflow="hidden"
         backgroundColor="japan.400"
         position="relative"
-        pt={10}
-        pb={14}
+        pt={[10]}
+        pb={[14, 20]}
       >
         <Image
           zIndex={0}
@@ -81,44 +92,32 @@ function App() {
           right={0}
           left={0}
           margin="0 auto"
+          top={[0, "-30px"]}
+          width={["100%", "500px"]}
         />
-        <Heading as="h1" textAlign="center" color="white" pb={10}>
-          JAPAN will be Back
+        <Heading
+          as="h1"
+          fontSize={["4xl", "5xl"]}
+          textAlign="center"
+          color="white"
+        >
+          JAPAN is Back!
         </Heading>
-
-        <Center>
-          <Link
-            href="https://mint.club/token/base/%F0%9F%87%AF%F0%9F%87%B5"
-            target="_blank"
-          >
-            <Button
-              size="lg"
-              backgroundColor="white"
-              color="japan.400"
-              borderRadius="full"
-              py={5}
-              px={10}
-              fontSize="xl"
-            >
-              Buy $JAPAN
-            </Button>
-          </Link>
-        </Center>
 
         <Center color="japan.400" position="relative">
           <Box
             w={["90%", "600px"]}
             maxW="90%"
             backgroundColor="rgba(255,255,255,.85)"
-            p={6}
+            p={[6, 10]}
             borderRadius={20}
-            mt={10}
+            mt={6}
           >
             <Heading textAlign="center" as="h2">
               $JAPAN
             </Heading>
 
-            <Text fontSize="md" mt={4} fontWeight="bold">
+            <Text fontSize={["md", "lg"]} mt={4} fontWeight="bold">
               As the Japanese yen continues to dive lower and lower, $JAPAN has
               arrived to bring back the wealth and prosperity of Japan.
               <br />
@@ -130,12 +129,23 @@ function App() {
         </Center>
       </Box>
 
-      <Image width="100%" src={collage1} />
+      <Image
+        display={["block", "none"]}
+        width="100%"
+        margin="0 auto"
+        src={collage_sp}
+      />
+      <Image
+        display={["none", "block"]}
+        width="100%"
+        margin="0 auto"
+        src={collage_pc}
+      />
 
       <Tokenomics />
 
       <Box backgroundColor="#bc002d40" pt={10} pb="240px">
-        <Container color="japan.400">
+        <Container maxW="850px" color="japan.400">
           <Heading as="h2" px={5}>
             $JAPAN is more than just a meme coin.
           </Heading>
