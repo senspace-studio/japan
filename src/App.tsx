@@ -14,6 +14,9 @@ import hero1 from "./assets/hero/1.jpg"
 import hero2 from "./assets/hero/2.jpg"
 import hero3 from "./assets/hero/3.jpg"
 import hero4 from "./assets/hero/4.jpg"
+import hero5 from "./assets/hero/5.jpg"
+import hero6 from "./assets/hero/6.jpg"
+import hero7 from "./assets/hero/7.jpg"
 import bg1 from "./assets/chart.png"
 import collage_sp from "./assets/collage_sp.png"
 import collage_pc from "./assets/collage_pc.png"
@@ -77,6 +80,30 @@ function App() {
             alignItems="center"
           >
             <Image src={hero4} />
+          </Flex>
+          <Flex
+            flex={["0 0 100%", "0 0 33.333%"]}
+            minW="0"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Image src={hero5} />
+          </Flex>
+          <Flex
+            flex={["0 0 100%", "0 0 33.333%"]}
+            minW="0"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Image src={hero6} />
+          </Flex>
+          <Flex
+            flex={["0 0 100%", "0 0 33.333%"]}
+            minW="0"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Image src={hero7} />
           </Flex>
         </Box>
       </Box>
