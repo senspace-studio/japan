@@ -136,7 +136,7 @@ export const Tokenomics: FC = () => {
             style={{ margin: "0 auto" }}
             datasetIdKey="id"
             data={{
-              labels: ["Bonding curve: 95%", "Ecosystem: 4%", "Airdrops: 1%"],
+              labels: ["Bonding Curve: 95%", "Ecosystem: 4%", "Airdrops: 1%"],
               datasets: [
                 {
                   data: [95, 4, 1],
