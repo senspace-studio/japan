@@ -9,14 +9,23 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react"
-import { FC } from "react"
+import { FC, useMemo } from "react"
 import { Pie } from "react-chartjs-2"
-import abe from "../assets/abe.png"
 import { Chart, ArcElement, Legend } from "chart.js"
+import { Trans, useTranslation } from "react-i18next"
 Chart.register(ArcElement)
 Chart.register(Legend)
 
 export const Tokenomics: FC = () => {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation()
+
+  const isJa = useMemo(() => {
+    return language === "ja"
+  }, [language])
+
   return (
     <Box pt={[10, 20]} pb={[5, 20]}>
       <Heading color="japan.400" textAlign="center" mb="50px">
@@ -26,19 +35,25 @@ export const Tokenomics: FC = () => {
           display="inline-block"
           _before={{
             content: '" "',
-            width: ["65px", "80px"],
+            width: ["125px", isJa ? "110px" : "150px"],
             height: "5px",
             backgroundColor: "black",
             display: "inline-block",
             position: "absolute",
             top: 3.5,
             left: "0",
-            transform: "rotate(20deg)",
+            transform: "rotate(10deg)",
           }}
+          letterSpacing={isJa ? 2 : "auto"}
         >
-          ABENOMICS
-          <Box position="absolute" bottom={-8} left={-3} as="span">
-            TOKE
+          {t("top.bubblenomics")}
+          <Box
+            position="absolute"
+            bottom={isJa ? -9 : -8}
+            left={isJa ? -5 : 7}
+            as="span"
+          >
+            {t("top.toke")}
           </Box>
         </Box>
       </Heading>
@@ -51,7 +66,6 @@ export const Tokenomics: FC = () => {
         alignItems="flex-start"
       >
         <Grid
-          backgroundImage={`url(${abe})`}
           backgroundColor="rgba(255,255,255,.8)"
           backgroundBlendMode="lighten"
           backgroundSize="cover"
@@ -61,7 +75,7 @@ export const Tokenomics: FC = () => {
         >
           <Box>
             <Text fontWeight="bold" fontSize="lg">
-              Ticker
+              {t("top.ticker")}
             </Text>
             <Text fontWeight="bold" fontSize="3xl" color="japan.400">
               $JAPAN
@@ -69,7 +83,7 @@ export const Tokenomics: FC = () => {
           </Box>
           <Box>
             <Text fontWeight="bold" fontSize="lg">
-              Total Supply
+              {t("top.total_supply")}
             </Text>
             <Text fontWeight="bold" fontSize="3xl" color="japan.400">
               81,000,000,000
@@ -77,7 +91,7 @@ export const Tokenomics: FC = () => {
           </Box>
           <Box>
             <Text fontWeight="bold" fontSize="lg">
-              Trading Royalty
+              {t("top.trading_royalty")}
             </Text>
             <Text fontWeight="bold" fontSize="3xl" color="japan.400">
               0.3%
@@ -111,66 +125,14 @@ export const Tokenomics: FC = () => {
               <Heading as="h3">
                 <AccordionButton fontSize="lg" fontWeight="bold">
                   <Box as="span" flex="1" textAlign="left">
-                    Details
+                    {t("top.tokenomics_detail_title")}
                   </Box>
 
                   <AccordionIcon />
                 </AccordionButton>
               </Heading>
               <AccordionPanel>
-                <Box as="span" fontWeight="bold">
-                  95% Community
-                </Box>
-                <br />
-                This is not for our bags. This is for the culture.
-                <br />
-                <br />
-                <Box as="span" fontWeight="bold">
-                  1% Aidrops
-                </Box>
-                <br />
-                Airdrop 1 (25% of 1%)
-                <br />
-                Tokyo DAO NFT holders
-                <br />
-                Farcon Summit pass holders
-                <br />
-                /tokyowip
-                <br />
-                /farcon
-                <br />
-                /farcon-tokyo
-                <br />
-                /Japan
-                <br />
-                /Japanese
-                <br />
-                /tokyo
-                <br />
-                /jp
-                <br />
-                /kyoto
-                <br />
-                /anime-manga
-                <br />
-                /ramen
-                <br />
-                /yakult1000
-                <br />
-                /farcon-nyc
-                <br />
-                <br />
-                Airdrop 2-4 (25% of 1% each)
-                <br />
-                TBD
-                <br />
-                <br />
-                <Box as="span" fontWeight="bold">
-                  4% Ecosystem
-                </Box>
-                <br />
-                Ecosystem and community including an estimated 50% (of 4%)
-                towards Farcon Tokyo 2025
+                <Trans>{t("top.tokenomics_detail_content")}</Trans>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>

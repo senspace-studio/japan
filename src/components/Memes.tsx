@@ -48,7 +48,7 @@ export const Memes: FC = () => {
           transform={["none", "scale(1.2)"]}
           src={meme6}
           position="absolute"
-          top={610}
+          top={[680, 610]}
         />
       </Container>
     </Box>

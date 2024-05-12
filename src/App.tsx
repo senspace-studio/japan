@@ -20,8 +20,11 @@ import collage_pc from "./assets/collage_pc.png"
 import { Tokenomics } from "./components/Tokenomics"
 import { Memes } from "./components/Memes"
 import Autoplay from "embla-carousel-autoplay"
+import { Trans, useTranslation } from "react-i18next"
 
 function App() {
+  const { t } = useTranslation()
+
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
@@ -101,7 +104,7 @@ function App() {
           textAlign="center"
           color="white"
         >
-          JAPAN is Back!
+          {t("top.title")}
         </Heading>
 
         <Center color="japan.400" position="relative">
@@ -118,12 +121,7 @@ function App() {
             </Heading>
 
             <Text fontSize={["md", "lg"]} mt={4} fontWeight="bold">
-              As the Japanese yen continues to dive lower and lower, $JAPAN has
-              arrived to bring back the wealth and prosperity of Japan.
-              <br />
-              We are ushering in a new Bubble, this time with Nihonjins, Gajins,
-              Degens and Otakus from around the world uniting to celebrate the
-              culture that we love in the only way we know how.
+              <Trans>{t("top.description")}</Trans>
             </Text>
           </Box>
         </Center>
@@ -147,16 +145,10 @@ function App() {
       <Box backgroundColor="#bc002d40" pt={10} pb="240px">
         <Container maxW="850px" color="japan.400">
           <Heading as="h2" px={5}>
-            $JAPAN is more than just a meme coin.
+            {t("top.statement")}
           </Heading>
           <Text mt={3} fontWeight="bold" px={5}>
-            It is a license for every cryptoite from Tokyo and around the world
-            to party like they’re at Juliana’s Tokyo.
-            <br />
-            Initially set up as an effort to drum up excitement and create a
-            budget for Farcon Tokyo, $JAPAN has expanded its mission to be a
-            token that anyone, wherever they may be, to be able to bask in the
-            euphoria of the next Bubble.
+            <Trans>{t("top.statement_description")}</Trans>
           </Text>
         </Container>
       </Box>
@@ -164,7 +156,7 @@ function App() {
       <Memes />
 
       <Heading as="h2" textAlign="center" mb={2}>
-        JOIN US
+        {t("top.join")}
       </Heading>
       <Center>
         <Link
@@ -181,7 +173,7 @@ function App() {
             fontSize="xl"
             width={250}
           >
-            Buy $JAPAN
+            {t("top.buy")}
           </Button>
         </Link>
       </Center>
@@ -198,7 +190,7 @@ function App() {
             width={250}
             mt={3}
           >
-            Warpcast
+            {t("top.warpcast")}
           </Button>
         </Link>
       </Center>
@@ -206,10 +198,7 @@ function App() {
       <Box backgroundColor="japan.400" mt={10}>
         <Container py={10}>
           <Text fontSize="lg" color="white">
-            $JAPAN is a party token made for entertainment purposes only.
-            <br />
-            We do not guarantee any financial returns from purchasing $JAPAN.
-            DYOR.
+            <Trans>{t("top.discramer")}</Trans>
           </Text>
         </Container>
       </Box>
