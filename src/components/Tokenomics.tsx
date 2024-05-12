@@ -28,14 +28,14 @@ export const Tokenomics: FC = () => {
 
   return (
     <Box pt={[10, 20]} pb={[5, 20]}>
-      <Heading color="japan.400" textAlign="center" mb="50px">
+      <Heading color="japan.400" textAlign="center" mb={["20px", "50px"]}>
         <Box
           as="span"
           position="relative"
           display="inline-block"
           _before={{
             content: '" "',
-            width: ["125px", isJa ? "110px" : "150px"],
+            width: [isJa ? "95px" : "125px", isJa ? "110px" : "150px"],
             height: "5px",
             backgroundColor: "black",
             display: "inline-block",
