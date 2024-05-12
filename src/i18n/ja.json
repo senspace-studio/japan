@@ -13,6 +13,7 @@
     "ticker": "シンボル",
     "total_supply": "総供給量",
     "trading_royalty": "トレーディングロイヤリティ",
+    "trading_royalty_desc": "トレーディングロイヤリティはFarConの東京開催の資金に充てられ、余剰資金は$JAPANの発展に使われます。",
     "bubblenomics": "バブル経済",
     "toke": "トークン",
     "initial_price": "初期価格",

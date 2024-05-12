@@ -30,7 +30,7 @@ export const Tokenomics: FC = () => {
 
   return (
     <Box pt={[10, 20]} pb={[5, 20]}>
-      <Heading color="japan.400" textAlign="center" mb={["20px", "50px"]}>
+      <Heading color="japan.400" textAlign="center" mb={["40px", "50px"]}>
         <Box
           as="span"
           position="relative"
@@ -72,6 +72,7 @@ export const Tokenomics: FC = () => {
           </Link>
           {t("top.bonding_curve2")}
         </Text>
+        <Text color="japan.400">{t("top.trading_royalty_desc")}</Text>
       </Container>
 
       <Grid
@@ -86,7 +87,7 @@ export const Tokenomics: FC = () => {
           backgroundBlendMode="lighten"
           backgroundSize="cover"
           textAlign="center"
-          py={10}
+          pb={10}
           gap={4}
         >
           <Box>
