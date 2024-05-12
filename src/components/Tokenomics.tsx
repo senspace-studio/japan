@@ -97,6 +97,22 @@ export const Tokenomics: FC = () => {
               0.3%
             </Text>
           </Box>
+          <Box>
+            <Text fontWeight="bold" fontSize="lg">
+              {t("top.initial_price")}
+            </Text>
+            <Text fontWeight="bold" fontSize="3xl" color="japan.400">
+              0.0₈81 WETH
+            </Text>
+          </Box>
+          <Box>
+            <Text fontWeight="bold" fontSize="lg">
+              {t("top.final_price")}
+            </Text>
+            <Text fontWeight="bold" fontSize="3xl" color="japan.400">
+              0.0₅81 WETH
+            </Text>
+          </Box>
         </Grid>
         <Box>
           <Pie
