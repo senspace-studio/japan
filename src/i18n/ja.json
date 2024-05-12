@@ -16,6 +16,8 @@
     "bubblenomics": "バブル経済",
     "toke": "トークン",
     "initial_price": "初期価格",
-    "final_price": "最終価格"
+    "final_price": "最終価格",
+    "bonding_curve1": "$JAPAN ERC20トークンとしてボンディングカーブアルゴリズムによって、発行されています。（",
+    "bonding_curve2": "）現在流動性プールはありませんが、今後作られる可能性もあります。"
   }
 }

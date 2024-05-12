@@ -16,6 +16,8 @@
     "bubblenomics": "BUBBLENOMICS",
     "toke": "TOKE",
     "initial_price": "Initial Price",
-    "final_price": "Final Price"
+    "final_price": "Final Price",
+    "bonding_curve1": "$JAPAN is an ERC-20 issued on a bonding curve powered by ",
+    "bonding_curve2": ". There is currently no LP but one may be created in the future."
   }
 }

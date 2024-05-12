@@ -5,8 +5,10 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Container,
   Grid,
   Heading,
+  Link,
   Text,
 } from "@chakra-ui/react"
 import { FC, useMemo } from "react"
@@ -57,6 +59,20 @@ export const Tokenomics: FC = () => {
           </Box>
         </Box>
       </Heading>
+
+      <Container mb={10}>
+        <Text color="japan.400">
+          {t("top.bonding_curve1")}{" "}
+          <Link
+            textDecor="underline"
+            href="https://mint.club/about"
+            target="_blank"
+          >
+            Mint Club
+          </Link>
+          {t("top.bonding_curve2")}
+        </Text>
+      </Container>
 
       <Grid
         maxW={["100%", "900px"]}
