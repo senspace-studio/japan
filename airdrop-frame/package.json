@@ -13,6 +13,7 @@
     "frog": "^0.11.2",
     "hono": "^4",
     "json-bigint": "^1.0.0",
+    "merkletreejs": "^0.3.11",
     "mint.club-v2-sdk": "^0.0.109",
     "viem": "^2.10.9"
   },

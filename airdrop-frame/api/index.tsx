@@ -143,7 +143,6 @@ app.frame("/airdrop", async (c) => {
         const claimed = await isClaimed(walletAddress, id)
         const amountLeft = await isAmountLeft(id)
 
-        console.log(airdrop.title, eligible, claimed, amountLeft)
         return {
           id,
           active: eligible && !claimed && amountLeft,
@@ -251,9 +250,9 @@ app.frame("/airdrop", async (c) => {
               fontWeight: "bold",
             }}
           >
-            {`${formatEther(airdrop.airdrop.amountPerClaim)} $JAPAN ${
-              airdrop.id
-            }`}
+            {`${Math.ceil(
+              Number(formatEther(airdrop.airdrop.amountPerClaim))
+            )} $JAPAN`}
           </div>
         </div>
       ),
@@ -276,7 +275,7 @@ app.transaction("/claim", async (c) => {
     airdrop.airdrop.merkleRoot ===
     "0x0000000000000000000000000000000000000000000000000000000000000000"
       ? []
-      : await getMerkleProof(airdrop.airdrop)
+      : await getMerkleProof(c.previousState.walletAddress, airdrop.airdrop)
 
   return c.contract({
     abi: MERKLE_DELIVERY_ABI,
