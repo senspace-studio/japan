@@ -26,6 +26,7 @@ type State = {
 export const app = new Frog<{ State: State }>({
   assetsPath: "/",
   basePath: "/api",
+  browserLocation: "https://nippon.cash",
   initialState: {
     airdrops: "",
     currentIndex: 0,
